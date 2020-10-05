@@ -1,0 +1,20 @@
+#端口号
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: localhost   # eureka注册中心服务器名字  IP地址
+  client:
+    #表示注册中心对于eureka本身无效,本身不需要注册（是否注册到注册中心）
+    register-with-eureka: false
+    #见名思意:获取注册,用于需不需要去注册中心获取其他服务IP地址,当前服务模块本身为注册中心用于维护服务的实例,不需要检索(获取)服务
+    fetch-registry: false
+    #设置当前服务注册中心模块访问路径
+    service-url:
+      defaultZone: http://eureka7003.com:7003/eureka
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 30000
+
+
+
